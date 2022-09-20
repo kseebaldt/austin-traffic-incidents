@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/geojson": "^7946.0.10",
+    "athena-express": "^7.1.5",
+    "aws-sdk": "^2.1220.0",
+    "maplibre-gl": "^2.4.0",
     "next": "12.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-map-gl": "^7.0.19"
   },
   "devDependencies": {
     "@types/node": "18.7.18",
