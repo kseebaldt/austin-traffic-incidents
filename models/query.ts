@@ -38,7 +38,7 @@ export async function query(bounds?: Bounds): Promise<FeatureCollection> {
   const poly = toPolygon(bounds || initialBounds);
 
   let myQuery = {
-    sql: `SELECT sum(count) as total, geojson as geojson FROM austin_traffic where month >= CAST('2022-01-01' as DATE) and ST_Contains('${poly}', wkt) group by geojson`,
+    sql: `SELECT sum(count) as total, geojson as geojson FROM austin_traffic where month >= CAST('2022-01-01' as DATE) and ST_Contains(st_geometryfromtext('${poly}'), st_geometryfromtext(wkt)) group by geojson`,
     db: "kurtis-test-analytics",
   };
 
